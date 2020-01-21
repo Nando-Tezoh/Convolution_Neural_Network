@@ -41,7 +41,7 @@ print('the len of the train data is \n {}'.format(l2))
 
 ### For the train data
 shuffle     = True
-batch_size  = 64
+batch_size  = 4
 num_workers = 1
 dataloader  = DataLoader(dataset=dataset, 
                          shuffle=shuffle, 
@@ -50,7 +50,7 @@ dataloader  = DataLoader(dataset=dataset,
 
 ### For the train data
 shuffle     = True
-batch_size  = 64
+batch_size  = 4
 num_workers = 1
 dataloader1  = DataLoader(dataset=dataset1, 
                          shuffle=shuffle, 
@@ -67,8 +67,10 @@ train_loader = dataloader
 test_loader = dataloader1
 
 model = CNN(input_size, n_feature, output_size)
+model2 = CNN1(input_size, n_feature, output_size)
 
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
+optimizer1 = optim.SGD(model2.parameters(), lr=0.01, momentum=0.5)
 print('Number of parameters: {}'.format(get_n_params(model)))
 
 #### Change of names
@@ -83,11 +85,10 @@ for epoch in range(0, 1):
     
 ### Model 2
 
-model2 = CNN1(input_size, n_feature, output_size)
 
 print('Here we are using the second CNN2 of the file Model.py')
 
 
 for epoch in range(0, 1):
-    train(epoch, model2,train_loader,optimizer)
+    train(epoch, model2,train_loader,optimizer1)
     test(model2,test_loader)
