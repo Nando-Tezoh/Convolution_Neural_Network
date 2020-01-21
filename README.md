@@ -1,4 +1,4 @@
 # Convolution_Neural_Network
 Class_Project
 ## The data are available here:
-http://d2l.ai/chapter_recurrent-neural-networks/text-preprocessing.html
+link = "https://drive.google.com/file/d/1qXKSt6jAgh20f-2PkRT-Z61PW-3E4S_z/"
